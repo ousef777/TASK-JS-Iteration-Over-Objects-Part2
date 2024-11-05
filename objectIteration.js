@@ -51,22 +51,22 @@ const students = [
   },
 ];
 
-// 1) Using `getStudentName` that accepts an argument of `student` object, return the student name
+// 1) Write a `getStudentName` function that accepts an argument of `student` object, return the student name
 function getStudentName(student) {
   // write your code here...
   return student["name"];
 }
 // console.log(getStudentName(students[0]))
 
-// 2) Using `getCourse` function that accepts a `student` object and `courseIndex` return the course at the specified course index in the student's courses array
-
+// 2) Write a `getCourse` function that accepts a `student` object and `courseIndex` return the course at the specified course index in the student's courses array
 function getCourse(student, courseIndex) {
   // write your code here...
   return student["courses"][courseIndex];
 }
 // console.log(getCourse(students[4], 2)); // Outputs: Music
 
-// 3) Using `addCourseToStudent` function that accepts a `student` object and `course` string, it will add the course to the student's courses array, and return the `student` object
+// 3) Write a `addCourseToStudent` function that accepts a `student` object and `course` string,
+// it will add the course to the student's courses array and return the `student` object
 function addCourseToStudent(student, course) {
   // write your code here...
   student["courses"].push(course);
@@ -74,13 +74,15 @@ function addCourseToStudent(student, course) {
 }
 // console.log(addCourseToStudent(students[7], "Physics"));
 
-// 4) Using `countCourses` function that accept a `student` object, return the number of courses the student in enrolled in
+// 4) Write a `countCourses` function that accepts a `student` object
+// then returns the number of courses the student is enrolled in
 function countCourses(student) {
   // write your code here...
   return student["courses"].length;
 }
 // console.log(countCourses(students[1])); // Outputs: 4
 
+<<<<<<< HEAD
 // 🌶️🌶️
 // 5) Using `listAllCourses` function that accepts an array of `students`, return an array of all unique courses names across all students
 function listAllCourses(students) {
@@ -90,6 +92,11 @@ function listAllCourses(students) {
 // console.log(listAllCourses(students));
 
 // 6) Using `removeCourseFromStudent` function that accepts a `student` object and `course` string, remove the `course` from the student's courses array,, and return the `student` object.
+=======
+// 5) Write a `removeCourseFromStudent` function that accepts a `student` object and `course` string,
+// removes the `course` from the student's courses array,
+// then returns the `student` object.
+>>>>>>> d9e35eb1350d1ad0801631306e9b4728ab30cdea
 function removeCourseFromStudent(student, course) {
   // write your code here...
   student["courses"].splice(student["courses"].indexOf(course), 1);
@@ -97,21 +104,32 @@ function removeCourseFromStudent(student, course) {
 }
 // console.log(removeCourseFromStudent(students[6], "Science"));
 
-// 7) Using `findStudentById` function that accepts a `studentId` and an array of student objects `students`, return the student object with the matching id.
-function findStudentById(studentId, students) {
+// 6) Write a `findStudentById` function that accepts a `studentId` and an array of student objects `students`
+// and returns the student object with the matching id.
+// It should return undefinded if a student is not found
+function findStudentById(students, studentId) {
   // write your code here...
   return students.find((value) => value["id"] === studentId);
 
 }
-// console.log(findStudentById(10, students));
+// console.log(findStudentById(students, 10));
+
+// 🌶️🌶️
+// 7) Write a `getStudentsByCourse` function that accepts a `course` string and an array of student objects `students`,
+// then returns an array of student objects who are enrolled in the specified course
+function getStudentsByCourse(students, course) {
+  // write your code here...
+}
+// console.log(getStudentsByCourse(students, "Music"));
 
 // 🌶️🌶️🌶️
-// 8) Using `getStudentsByCourse` function that accepts a `course` string and an array of student objects `students`, return an array of student objects who are enrolled in the specified course
-function getStudentsByCourse(course, students) {
+// 8) Write a `listAllCourses` function that accepts an array of `students`
+// then returns an array of all unique courses names across all students
+function listAllCourses(students) {
   // write your code here...
   return students.filter((value) => value["courses"].includes(course));
 }
-// console.log(getStudentsByCourse("Music", students));
+// console.log(listAllCourses(students));
 
 module.exports = {
   getStudentName,

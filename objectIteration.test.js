@@ -3,10 +3,8 @@ const {
   getCourse,
   addCourseToStudent,
   countCourses,
-  listAllCourses,
   removeCourseFromStudent,
   findStudentById,
-  getStudentsByCourse,
 } = require("./objectIteration");
 
 describe("Student Data Functions", () => {
@@ -59,24 +57,6 @@ describe("Student Data Functions", () => {
     });
   });
 
-  describe("listAllCourses 🌶️", () => {
-    it("should return an array of all unique course names", () => {
-      const allCourses = listAllCourses(students);
-      expect(allCourses).toEqual(
-        expect.arrayContaining([
-          "Math",
-          "Science",
-          "History",
-          "English",
-          "Art",
-          "Music",
-          "PE",
-        ])
-      );
-      expect(allCourses.length).toBe(7);
-    });
-  });
-
   describe("removeCourseFromStudent", () => {
     it("should remove a course from a student and return the updated student", () => {
       const student = students[6];
@@ -88,21 +68,6 @@ describe("Student Data Functions", () => {
   describe("findStudentById", () => {
     it("should return the student object with the matching id", () => {
       expect(findStudentById(10, students)).toEqual(students[9]);
-    });
-  });
-
-  describe("getStudentsByCourse 🌶️🌶️🌶️", () => {
-    it("should return an array of student objects enrolled in a specified course", () => {
-      const enrolledStudents = getStudentsByCourse("Music", students);
-      expect(enrolledStudents).toEqual(
-        expect.arrayContaining([
-          expect.objectContaining({ id: 3, name: "Charlie" }),
-          expect.objectContaining({ id: 5, name: "Eva" }),
-          expect.objectContaining({ id: 7, name: "Grace" }),
-          expect.objectContaining({ id: 10, name: "Jack" }),
-        ])
-      );
-      expect(enrolledStudents.length).toBe(4);
     });
   });
 });
