@@ -1,6 +1,6 @@
 const { getStudentsByCourse, listAllCourses } = require("./objectIteration");
 
-xdescribe("🌶️🌶️🌶️ Challenges", () => {
+describe("🌶️🌶️🌶️ Challenges", () => {
   let students;
 
   beforeEach(() => {

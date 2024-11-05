@@ -67,7 +67,7 @@ describe("Student Data Functions", () => {
 
   describe("findStudentById", () => {
     it("should return the student object with the matching id", () => {
-      expect(findStudentById(10, students)).toEqual(students[9]);
+      expect(findStudentById(students, 10)).toEqual(students[9]);
     });
   });
 });

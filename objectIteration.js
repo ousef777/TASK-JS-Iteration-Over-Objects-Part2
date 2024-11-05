@@ -82,21 +82,9 @@ function countCourses(student) {
 }
 // console.log(countCourses(students[1])); // Outputs: 4
 
-<<<<<<< HEAD
-// 🌶️🌶️
-// 5) Using `listAllCourses` function that accepts an array of `students`, return an array of all unique courses names across all students
-function listAllCourses(students) {
-  // write your code here...
-  return Array.from(new Set(students.map((value) => value["courses"]).flat()));
-}
-// console.log(listAllCourses(students));
-
-// 6) Using `removeCourseFromStudent` function that accepts a `student` object and `course` string, remove the `course` from the student's courses array,, and return the `student` object.
-=======
 // 5) Write a `removeCourseFromStudent` function that accepts a `student` object and `course` string,
 // removes the `course` from the student's courses array,
 // then returns the `student` object.
->>>>>>> d9e35eb1350d1ad0801631306e9b4728ab30cdea
 function removeCourseFromStudent(student, course) {
   // write your code here...
   student["courses"].splice(student["courses"].indexOf(course), 1);
@@ -109,7 +97,7 @@ function removeCourseFromStudent(student, course) {
 // It should return undefinded if a student is not found
 function findStudentById(students, studentId) {
   // write your code here...
-  return students.find((value) => value["id"] === studentId);
+  return students.find((value) => value["id"] == studentId);
 
 }
 // console.log(findStudentById(students, 10));
@@ -119,6 +107,7 @@ function findStudentById(students, studentId) {
 // then returns an array of student objects who are enrolled in the specified course
 function getStudentsByCourse(students, course) {
   // write your code here...
+  return students.filter((value) => value["courses"].includes(course));
 }
 // console.log(getStudentsByCourse(students, "Music"));
 
