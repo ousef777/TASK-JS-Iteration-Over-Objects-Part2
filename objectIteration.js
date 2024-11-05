@@ -107,7 +107,7 @@ function findStudentById(students, studentId) {
 // then returns an array of student objects who are enrolled in the specified course
 function getStudentsByCourse(students, course) {
   // write your code here...
-  return students.filter((value) => value["courses"].includes(course)).map(student => student.name);
+  return students.filter((value) => value["courses"].includes(course));
 }
 // console.log(getStudentsByCourse(students, "Music"));
 

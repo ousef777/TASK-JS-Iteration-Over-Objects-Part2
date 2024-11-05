@@ -24,7 +24,7 @@ describe("🌶️🌶️🌶️ Challenges", () => {
 
   describe("getStudentsByCourse 🌶️🌶️", () => {
     it("should return an array of student objects enrolled in a specified course", () => {
-      const enrolledStudents = getStudentsByCourse("Music", students);
+      const enrolledStudents = getStudentsByCourse(students, "Music");
       expect(enrolledStudents).toEqual(
         expect.arrayContaining([
           expect.objectContaining({ id: 3, name: "Charlie" }),
